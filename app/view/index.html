@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Database App</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Students DataBase</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+           <form id="search" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search By ID" id="searchById" name="id">
+                <button class="btn btn-outline-light find" type="submit" id="find">Search</button>
+          </form>
+          &nbsp;
+          <button type="button" class="btn btn-outline-light new" id="new">New</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+
+  <table class="table table-striped students">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>Student</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Student ID</th>
+        <th>Subjects</th>
+        <th>Modify</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+  </table>
+
+  <div class="modal fade" id="theModal" tabindex="-1" role="dialog" aria-labelledby="theModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Insert a Student</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="newStudent">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="Name">Student</label>
+              <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="Age">Age</label>
+              <input type="number" class="form-control" name="age" placeholder="Age">
+            </div>
+            <div class="form-group">           
+              <input type="radio"  name="gender" value="Female" checked="checked"> Female
+              <input type="radio"  name="gender" value="Male"> Male   
+            </div>
+            <div class="form-group">    
+              <label for="Subjects">Subjects</label>
+              <input type="text" class="form-control" name="subjects" placeholder="Subjects">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="hidden" name="studentId">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary save" id="save">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
